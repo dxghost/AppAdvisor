@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ap Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .imgcafe {
+            margin: 30px 0px 10px 0px;
+            align-content: center;
+        }
+
+        .tab1 {
+            width: 100%;
+            background-color: #f4424e;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+
+        }
+
+        .tab {
+            margin: -1px 0px 0px 0px;
+        }
+
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+        .title {
+            background-color: #f21f2d;
+            border-radius: 4px;
+        }
+
+        .gridm {
+            background-color: #dddddd;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #7777fc;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #444cfc;
+        }
+
+    </style>
+</head>
+<body>
+<p style="background-color: #7777fc;border-radius: 4px; text-align: center; color:white ; margin: 10px 20px 20px 20px; background-size: 200px 200px 200px 200px; padding: 14px 20px;  ">
+    Ap Project</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="gridm">
+            {% for i in result %}
+                <div class="col-sm-4" style="background-color: white;">
+                    <img class="imgcafe" src="//{{ i[7] }}" width="100px" height="100px"
+                         style="display: block;margin-left: auto;margin-right: auto;">
+                    <p class="tab">
+                    <center>Name: <b style="">{{ i[0] }}</b></center>
+                    </p>
+                    <p class="tab">
+                    <center>Categories: <b>{{ i[2] }}</b></center>
+                    </p>
+                    <p class="tab">
+                    <center>Size: <b>{{ i[4] }}</b></center>
+                    </p>
+                    <p class="tab">
+                    <center>Version: <b>{{ i[6] }}</b></center>
+                    </p>
+                    <p class="tab">
+                    <center>Downloads: <b>{{ i[3] }}</b></center>
+                    </p>
+                    <p class="tab">
+                    <center>Rate: <b>{{ i[5] }}</b></center>
+                    </p>
+                    <a class="tab" href="#">
+                        <center>Download Page</b></center>
+                    </a>
+                    <hr>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <form action="/" method="post">
+            <input type="submit" value="Back to Home Page">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+        }
+        .item {
+            margin: -2px 0px 0px 0px;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .tab {
+            margin: 10px 0px 0px 8px ;
+            text-align: left;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+
+    </style>
+</head>
+<body>
+<p><CENTER>Ap Project</CENTER></p>
+<div class="grid-container">
+    {% for i in result %}
+        <div class="item">
+            <img src="//{{ i[7] }}" width="100px" height="100px">
+            <p class="tab">Name: {{ i[0] }}</p>
+            <p class="tab">Categories: {{ i[2] }}</p>
+            <p class="tab">Size: {{ i[4] }}</p>
+            <p class="tab">Version: {{ i[6] }}</p>
+            <p class="tab">Downloads: {{ i[3] }}</p>
+            <p class="tab">Rate: {{ i[5] }}</p>
+            <a class="tab" href="#">Download Link</a>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <style>
+
+
+        @font-face {
+            font-family: 'isans';
+            src: url('fonts/IRANSans-Bold.eot?#') format('eot'), /* IE6–8 */
+            url('fonts/IRANSans-Bold.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+            url('fonts/IRANSans-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'IRANSans-web';
+            src: url('fonts/IRANSANSExpanded.eot?#') format('eot'), /* IE6–8 */
+            url('fonts/IRANSANSExpanded.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+            url('fonts/IRANSANSExpanded.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            font-weight: normal;
+        }
+
+        body {
+            direction: rtl; font-family: IRANSans-web;
+        }
+
+        #customers {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #f4424e;
+            color: white;
+        }
+
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #f4424e;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #f21f2d;
+        }
+
+        div {
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .mamad{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<table id="customers">
+    <tr>
+        <th><center>اسم</center></th>
+        <th><CENTER>دسته</CENTER></th>
+        <th><CENTER>حجم</CENTER></th>
+        <th><CENTER>نسخه</CENTER></th>
+        <th><CENTER>نصب های فعال</CENTER></th>
+        <th><CENTER>امتیاز</CENTER></th>
+        <th><CENTER>لینک</CENTER></th>
+
+
+    </tr>
+    {% for i in result %}
+    <tr>
+        <td><CENTER>{{ i[0] }}</CENTER></td>
+        <td><CENTER>{{ i[2] }}</CENTER></td>
+        <td><CENTER>{{ i[4] }}</CENTER></td>
+        <td><CENTER>{{ i[6] }}</CENTER></td>
+        <td><CENTER>{{ i[3] }}</CENTER></td>
+        <td><CENTER>{{ i[5] }}</CENTER></td>
+        <td><CENTER><img src="//{{ i[7] }}"  width="100px" height="100px"></CENTER></td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div>
+    <form action="/" method="post">
+        <input type="submit" value="Back to Home Page">
+    </form>
+</div>
+</body>
+</html>
+
+-->

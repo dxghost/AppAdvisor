@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @font-face {
+        font-family: 'isans';
+        src: url('fonts/IRANSans-Bold.eot?#') format('eot'), /* IE6–8 */ url('fonts/IRANSans-Bold.woff2') format('woff2'), /* Chrome36+, Opera24+*/ url('fonts/IRANSans-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: 'IRANSans-web';
+        src: url('fonts/IRANSANSExpanded.eot?#') format('eot'), /* IE6–8 */ url('fonts/IRANSANSExpanded.woff2') format('woff2'), /* Chrome36+, Opera24+*/ url('fonts/IRANSANSExpanded.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+        font-weight: normal;
+    }
+
+    body {
+        font-family: IRANSans-web;
+    }
+
+    input[type=text], select {
+        width: 100%;
+        color: black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        box-shadow: inset 0 1px 3px #ddd;
+
+    }
+
+    input[type=submit] {
+        width: 10px 10px 10px 10px;
+        background-color: #f4424e;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+
+    }
+
+    input[type=submit]:hover {
+        background-color: #f21f2d;
+
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        box-shadow: inset 0 1px 3px #ddd;
+
+    }
+</style>
+<body>
+
+<h3 style="text-align: center">AP Project</h3>
+
+<div>
+    <form action="{{ url_for('result') }}" method="POST">
+        <label for="fname ">Name</label>
+        <input style="align-items: center" type="text" id="fname" name="firstname" placeholder="Enter Keyword...">
+
+        <label for="Categories">Categories</label>
+        <select id="Categories" name="Categories">
+            <option value="Weather">Weather</option>
+            <option value="Category-food-drink">Category-food-drink</option>
+            <option value="Education">Education</option>
+            <option value="Tools">Tools</option>
+            <option value="Finance">Finance</option>
+            <option value="Communication">Communication</option>
+            <option value="News">News</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Medical">Medical</option>
+            <option value="Maps-navigation">Maps-navigation</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Travel-local">Travel-local</option>
+            <option value="Social">Social</option>
+            <option value="Personalization">Personalization</option>
+            <option value="Photography">Photography</option>
+            <option value="Business">Business</option>
+            <option value="Religous">Religous</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Music-audio">Music-audio</option>
+            <option value="Healt-fitness">Healt-fitness</option>
+            <option value="Sports">Sports</option>
+            <option value="Books-reference">Books-reference</option>
+            <option value="Media-video">Media-video</option>
+
+
+        </select>
+
+        <input type="submit" value="Search">
+
+    </form>
+    <form action="/add">
+        <input type="submit" value="Add App to database">
+
+    </form>
+</div>
+
+</body>
+</html>
